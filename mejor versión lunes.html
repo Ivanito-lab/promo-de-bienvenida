@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promoción de Bienvenida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Futura+PT:wght@400;700&display=swap" rel="stylesheet"> 
+  <style>
+    /* Resetear estilos del body y html */
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'helvetica', sans-serif;
+    }
+
+  /* Estilos para la sección inicial */
+    .desktop-section {
+      background-image: url('https://i.imgur.com/7oeQCE2.png');
+      background-size: auto 100%; 
+      background-repeat: no-repeat; 
+      background-position: center top;
+      color: #fff;
+      text-align: center;
+      padding: 100px 0; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 550px;
+      position: relative; /* Para posicionar elementos dentro de la sección */
+    }
+
+    /* Estilos para el logo */
+    .logo {
+      position: absolute;
+      top: 1px;
+      left: 200px;
+      width: 70px;
+      height: 70px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Estilos para el Banner */
+    .banner {
+      background-color: #fff; 
+      color: #000;            
+      padding: 20px 30px;    
+      border-radius: 50px;
+      box-shadow: 0px 0px 20px rgba(249, 148, 59, 0.8); 
+      text-align: center;
+      /*  Ancho del banner */
+      width: 60%;
+      /* Centrado horizontal */
+      margin: -100px auto 50px; 
+      /* Posicionamiento relativo al contenedor .desktop-section */
+      position: relative; 
+      z-index: 10; /* Asegura que el banner esté por encima de otros elementos */
+  
+    }
+
+    /* Estilos para el texto de la promoción */
+    .text-section {
+      background-color: transparent;
+      color: #fff;
+      padding: 20px 90px;
+      text-align: center; 
+      font-size: 1em; 
+      font-weight: normal; 
+    }
+
+    .headline {
+      font-size: 2.8em;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .subheadline {
+      font-size: 2.3em;
+      margin: 10px 0;
+    }
+
+    .description {
+      font-size: 1.8em;
+      margin: 10px 0;
+    }
+
+    .button {
+      margin: 20px 380px; 
+      padding: 15px 20px;
+      background-color: #f9943b;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 20px;
+      text-align: center;
+      display: block; 
+      width: auto;
+      max-width: 300px;
+    }
+
+    .button:hover {
+      background-color: #f97d1d;
+    }
+
+    .terms {
+      font-size: 0.7em;
+      margin: 10px 0;   
+
+    }
+
+    .banner h1 {
+      font-size: 2em;
+      margin-bottom: 5px;
+    }
+
+    .banner p {
+      font-size: 1.2em;
+      line-height: 1.0;
+    }
+    
+    /* Barra de pasos */
+    .steps-bar {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0px;
+      background-color: #ffff;
+      border-radius: 15px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 0px 100px;
+      border-color: #ecf0f1; 
+      border-style: solid;   
+      border-width: 2px;   
+    }
+
+.step-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .step-circle {
+      background-color: #f9943b;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.5em;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+      margin-right: 10px;
+    }
+
+    .step-text {
+      font-size: 1em;
+      color: #f9943b;
+      font-weight: bold;
+    }
+
+    /* Sección "¿Por qué formar parte de Abastece?" */
+    .benefits-section {
+      padding: 0px 100px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .benefits-title {
+      font-size: 2.5em;
+      color: #377ef4;
+      margin-bottom: 30px;
+    }
+
+    .benefits-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .benefit-item {
+      display: flex;
+      justify-content: center; 
+      text-align: center;
+      align-items: center;
+      border: 2px dashed #5fb5fc;
+      border-radius: 20px;
+      padding: 0px 5px; 
+      width: 250px;
+      lengt: 100px; 
+    }
+
+    .benefit-check {
+      color: #32cd32; 
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .benefit-text {
+      font-size: 1.1em;
+      color: #000;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Sección de categorías */
+    .categories-section {
+      background-color: #fff;
+      padding: 10px 100px;
+      text-align: center;
+    }
+    
+    .categories-title { 
+      font-size: 2.5em;
+      color: #377ef4;
+      margin-bottom: 30px; 
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .category-item {
+      border: none; 
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .category-item:hover {
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+      cursor: pointer; 
+    }
+
+    .category-link {
+      display: block;
+      text-decoration: none;
+      color: inherit; 
+    }
+
+    .category-icon {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+    }
+
+    .category-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* Menú desplegable */
+  .dropdown-section {
+  margin-bottom: 20px;
+  text-align: center;
+  background-image: url('https://i.imgur.com/Kd4AzRB.png');
+  background-size: auto; /* Ajusta el tamaño de la imagen automáticamente */
+  background-repeat: repeat-y; /* Repite la imagen verticalmente */
+   }
+
+    .dropdown-title {
+      font-size: 2.5em;
+      color: #f9943b; 
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .dropdown-tab {
+      background-color: #d0d3d4; 
+      color: white; 
+      border: none;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px; 
+      max-width: 800px;       
+      margin: 0 auto;          
+    }
+
+    .dropdown-content {
+      display: none;
+      padding: 10px;
+      border: none;
+      background-color: #f2f2f2; 
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+      max-width: 800px;       
+      margin: 0 auto;          
+    }
+
+    .dropdown-toggle {
+      font-size: 2em; 
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown-tab.active {
+      background-color: #f9943b;
+    }
+
+    .dropdown-tab.active .dropdown-toggle {
+      transform: rotate(45deg); 
+    }
+
+    /* Media Query para laptops */
+    @media screen and (max-width: 1024px) {
+      .desktop-section {
+        height: auto; /* Altura automática */
+        background-size: cover; /* La imagen cubrirá toda la sección */
+        padding: 50px 0; /* Ajusta el padding si es necesario */
+      }
+
+      .logo {
+        top: 20px;  /* Ajusta la posición del logo si es necesario */
+        left: 20px; /* Ajusta la posición del logo si es necesario */
+      }
+     }
+
+  /* Media Query para laptops pequeñas */
+  @media screen and (max-height: 700px) { 
+   .desktop-section {
+    height: auto; /* Altura automática en laptops pequeñas */
+    min-height: 0; /* Eliminamos la altura mínima */
+  }
+
+    }
+
+    /* Media Query para pantallas pequeñas (tablets y móviles) */
+    @media screen and (max-width: 768px) {
+      /* Ajustes para .desktop-section en pantallas pequeñas */
+      .desktop-section {
+        background-size: cover; /* Ajusta la imagen para cubrir la pantalla */
+        padding: 50px 0; /* Reduce el padding en pantallas pequeñas */
+        height: auto; /* Altura automática para pantallas pequeñas */
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start; 
+     
+      }
+
+      .headline {
+        font-size: 2em;
+      }
+
+      .subheadline {
+        font-size: 1.8em;
+      }
+
+      .description {
+        font-size: 1.5em;
+      }
+
+      .button {
+        font-size: 18px;
+      }
+
+      .terms {
+        font-size: 0.7em;
+
+      }
+
+      .steps-bar {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      .step-item {
+        margin-bottom: 10px;
+      }
+
+      .benefits-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .benefit-item {
+        width: 80%;
+      }
+
+      .categories-section {
+        padding: 20px; 
+      }
+
+      .categories-grid {
+        grid-template-columns: 1fr; 
+      }
+
+      /* Ajustes para .banner en pantallas pequeñas */
+      .banner {
+        padding: 15px 20px; /* Reduce el espacio interior */
+        font-size: 1em;    /* Reduce el tamaño de fuente general del banner */
+      }
+
+      .banner h1 {
+        font-size: 2em;        /* Ajusta el tamaño del título */
+      }
+
+      .banner p {
+        font-size: 1em;        /* Ajusta el tamaño del párrafo */
+      }
+
+      .logo {
+        top: 20px;  /* Ajusta la posición del logo si es necesario */
+        left: 20px; /* Ajusta la posición del logo si es necesario */
+        width: 50px; /* Ajusta el tamaño del logo si es necesario */
+        height: 50px;/* Ajusta el tamaño del logo si es necesario */
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="main-content"> 
+    <div class="container">
+      <div class="desktop-section">
+        <div class="logo">
+          <img src="https://www.abastece.co/imagenes/logo.jpg" alt="Logo de la empresa">
+        </div>
+        <div class="text-section"> 
+          <p class="headline">20% DE DESCUENTO</p>
+          <p class="subheadline">+ ENVÍO GRATIS</p>
+          <p class="description">EN TU PRIMERA COMPRA</p>
+          <a href="#registro" class="button">REGISTRARSE AHORA</a>
+          <p class="terms"> -Pedido mínimo de $100.000
+            -Promoción válida únicamente para registros nuevos.
+            -Descuento válido únicamente en el primer pedido
+            -Envío Gratis únicamente en Bogotá.</p>
+        </div> 
+      </div>
+
+      <div class="banner"> 
+        <h1>Somos expertos en suministros</h1>
+        <p> Desde un lápiz hasta la última tecnología. ¿No lo encuentras? Lo conseguimos para ti.</p>
+      </div> 
+
+      <!-- Resto del código HTML -->
+      <div class="steps-bar">
+        <div class="step-item">
+          <div class="step-circle">1</div>
+          <div class="step-text">Regístrate</div>
+        </div>
+        <div class="step-item">
+          <div class="step-circle">2</div>
+          <div class="step-text">Haz tu pedido</div>
+        </div>
+        <div class="step-item">
+          <div class="step-circle">3</div>
+          <div class="step-text">Recibe en 24 horas</div>
+        </div>
+      </div>
+
+      <div class="benefits-section">
+        <h2 class="benefits-title">¿Por qué formar parte de Abastece?</h2>
+        <div class="benefits-container">
+          <div class="benefit-item">
+            <div class="benefit-check">✓</div>
+            <p class="benefit-text">Entregas rápidas y eficientes</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-check">✓</div>
+            <p class="benefit-text">Experiencia de más de 20 años</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-check">✓</div>
+            <p class="benefit-text">Amplia gama de productos</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-check">✓</div>
+            <p class="benefit-text">Fabricantes de clase mundial</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-check">✓</div>
+            <p class="benefit-text">Atención personalizada</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-check">✓</div>
+            <p class="benefit-text">App revolucionaria</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="categories-section">
+        <h2 class="categories-title">Miles de productos</h2> 
+        <div class="categories-grid">
+          <div class="category-item">
+            <a href="https://www.abastece.co/buscar_producto.php?categoria=15&productos-de-ergonomia" class="category-link"> 
+              <div class="category-icon" style="background-image: url('https://i.imgur.com/GGzSJNe.png')"></div>
+              <h3 class="category-title">Ergonomía</h3>
+            </a>
+          </div>
+          <div class="category-item">
+            <a href="https://www.abastece.co/buscar_producto.php?categoria=9&productos-de-aseo" class="category-link">
+              <div class="category-icon" style="background-image: url('https://i.imgur.com/z1LAPn9.png')"></div>
+              <h3 class="category-title">Aseo</h3>
+            </a>
+          </div>
+          <div class="category-item">
+            <a href="https://www.abastece.co/buscar_producto.php?categoria=1&productos-de-cafeteria" class="category-link">
+              <div class="category-icon" style="background-image: url('https://i.imgur.com/Kn8R4UE.png')"></div>
+              <h3 class="category-title">Cafetería</h3>
+            </a>
+          </div>
+          <div class="category-item">
+            <a href="https://www.abastece.co/buscar_producto.php?categoria=11&tecnologia-y-accesorios-tecnologicos" class="category-link">
+              <div class="category-icon" style="background-image: url('https://i.imgur.com/7NXJkt0.png')"></div>
+              <h3 class="category-title">Tecnología</h3>
+            </a>
+          </div>
+          <div class="category-item">
+            <a href="https://www.abastece.co/buscar_producto.php?categoria=2&papeleria-y-suministros-oficina" class="category-link">
+              <div class="category-icon" style="background-image: url('https://i.imgur.com/nwuQAPa.png')"></div>
+              <h3 class="category-title">Papelería</h3>
+            </a>
+          </div>
+          <div class="category-item">
+            <a href="https://www.abastece.co/buscar_producto.php?categoria=14&seguridad-inductrial-botiquin-dotaciones" class="category-link">
+              <div class="category-icon" style="background-image: url(https://i.imgur.com/uqWaRcy.png)"></div>
+              <h3 class="category-title">Seguridad Industrial</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown-section">
+        <div class="dropdown-title">Todos los suministros para oficina</div>
+        <div class="dropdown-tab">
+          <span>Distribuidores de artículos, papelería y suministros para oficina</span>
+          <span class="dropdown-toggle">+</span>
+        </div>
+        <div class="dropdown-content">
+          <p>Compañía Papelera Nacional es el aliado de confianza para el suministro completo de insumos de oficina. Nuestro objetivo es simplificar la gestión de recursos en cualquier empresa, sin importar su tamaño o sector.
+          <br><br>
+          Nuestra plataforma Abastece conecta a empresas de todos los sectores con una amplia gama de productos esenciales: papel, artículos de limpieza, insumos de cafetería, papelería y mucho más. Grandes empresas de todo el país confían en nosotros, ya que trabajamos directamente con fabricantes de clase mundial para asegurar la calidad y disponibilidad de cada producto.
+          <br><br>
+          Somos más que proveedores; somos socios estratégicos para el abastecimiento integral de insumos, comprometidos a elevar el rendimiento de cada empresa a través de un suministro confiable y directo.
+          </p>
+        </div>
+
+        <div class="dropdown-tab">
+          <span>Resma de papel tamaño carta y oficio al por mayor y detal</span>
+          <span class="dropdown-toggle">+</span>
+        </div>
+        <div class="dropdown-content">
+          <p>Para quienes buscan resmas de papel de calidad en tamaño carta y oficio en Colombia, ofrecemos una amplia selección de productos de reconocidas marcas como Reprograf, Xerox y CartoPrint. Nuestras resmas están disponibles tanto para ventas al por mayor como al detal, asegurando un suministro constante para oficinas, empresas y clientes individuales. Aproveche nuestras ofertas y descuentos exclusivos para mayoristas y obtenga envíos rápidos y seguros en todo el país.<br><br>
+Resmas de papel tamaño carta
+Las resmas de papel tamaño carta son ideales para la impresión de documentos de uso diario, trabajos escolares y cualquier necesidad de papel estándar. Disponibles en diferentes gramajes y acabados, permiten obtener la mejor calidad de impresión en cualquier equipo.<br><br>
+Resma tamaño carta Reprograf: precio y características<br><br>
+La resma tamaño carta Reprograf se destaca por su excelente relación calidad-precio. Este papel es ideal para uso cotidiano en oficinas y empresas que requieren un rendimiento fiable y una alta calidad de impresión. Con gramajes disponibles de 75 a 90 gramos, este producto asegura una durabilidad y resistencia adecuadas para documentos importantes.<br><br>
+Características principales:<br><br>
+Gramaje: 75 g/m²<br><br>
+Blanco brillante, ideal para impresión láser e inyección de tinta<br><br>
+Apto para documentos internos y externos<br><br>
+Resma tamaño carta Xerox: precio y características<br><br>
+La resma tamaño carta Xerox es reconocida por su alta calidad y consistencia en los resultados. Con un nivel de blancura superior, garantiza una impresión clara y nítida en cada hoja.<br><br>
+Características principales:<br><br>
+Gramaje: 80 g/m²<br><br>Blancura alta, ideal para impresiones que requieren nitidez<br><br>
+Compatibilidad con impresoras de alta velocidad<br><br>
+Resma tamaño carta CartoPrint: precio y características<br><br>
+CartoPrint ofrece una resma tamaño carta ideal para quienes buscan un producto económico sin sacrificar la calidad. Este papel es ideal para impresiones generales, como borradores, notas y documentos no oficiales.<br><br>
+Características principales:<br><br>
+Gramaje: 75 g/m²<br><br>
+Apto para impresión de alta velocidad<br><br>
+Económico y fiable para uso diario<br><br>
+Resmas de papel tamaño oficio<br><br>
+Las resmas de papel tamaño oficio son preferidas para documentos legales y administrativos debido a su mayor longitud. Ofrecemos varias marcas que aseguran un rendimiento óptimo y una alta calidad de impresión.<br><br>
+Resma tamaño oficio Reprograf: precio y características<br><br>
+La resma tamaño oficio Reprograf es una opción confiable para quienes necesitan un papel de mayor tamaño con un rendimiento superior y duradero.
+Características principales:<br><br>
+Gramaje: 75 g/m²<br><br>
+Alta resistencia al uso y manipulación frecuente<br><br>
+Color blanco para impresión profesional<br><br>
+Resma tamaño oficio Xerox: precio y características<br><br>
+Con una blancura sobresaliente, la resma tamaño oficio Xerox asegura una excelente calidad de impresión, adecuada para documentos legales y empresariales.
+Características principales:<br><br>
+Gramaje: 80 g/m²<br><br>
+Resistente y duradero para documentos de archivo<br><br>
+Excelente calidad para impresión láser<br><br>
+Resma tamaño oficio CartoPrint: precio y características<br><br>
+La resma tamaño oficio CartoPrint es una opción económica ideal para el uso general en oficinas, asegurando calidad a un precio asequible.
+Características principales:<br><br>
+Gramaje: 75 g/m²<br><br>
+Adecuado para documentos que requieren una impresión económica<br><br>
+Compatible con impresoras de alto rendimiento<br><br>
+Remas de papel en otros tamaños<br><br>
+Además de los tamaños carta y oficio, también ofrecemos resmas de papel en diferentes dimensiones para cubrir cualquier necesidad de impresión especial. Desde formatos pequeños hasta hojas de mayor tamaño, contamos con opciones para aplicaciones específicas.<br><br>
+Otras resmas de papel<br><br>
+En nuestro inventario también se encuentran resmas de papel reciclado, papel fotográfico y papel bond de diferentes gramajes. Estas opciones son ideales para quienes buscan un producto especializado para aplicaciones específicas, como la impresión de fotografías, documentos importantes y más.
+.</p>
+        </div>
+
+        <div class="dropdown-tab">
+          <span>Envíos Gratis en Bogotá y envíos nacionales</span>
+          <span class="dropdown-toggle">+</span>
+        </div>
+        <div class="dropdown-content">
+          <p>Envíos Gratis en Bogotá
+Contamos con envío gratuito en Bogotá para compras que superen un monto mínimo. Este servicio asegura una entrega rápida y eficiente sin costos adicionales.
+Envíos nacionales<br><br>
+Ofrecemos envíos nacionales a cualquier ciudad de Colombia, garantizando que nuestros productos lleguen en óptimas condiciones y en el menor tiempo posible. Los costos de envío varían según la ubicación y el volumen de la compra.<br><br>
+.</p>
+        </div>
+
+        <div class="dropdown-tab">
+          <span>Comercializamos las marcas más reconocidas</span>
+          <span class="dropdown-toggle">+</span>
+        </div>
+        <div class="dropdown-content">
+          <p>En nuestra empresa, nos enorgullecemos de trabajar con las mejores marcas y proveedores en Colombia, asegurando que nuestros clientes tengan acceso a productos de la más alta calidad. Nuestro compromiso con la excelencia nos impulsa a garantizar que cada artículo en nuestro catálogo cumpla con rigurosos estándares de calidad. Además, nos esforzamos por ofrecer los precios más competitivos del mercado, asegurándonos de que obtengas un valor excepcional por tu inversión. Creemos que cada cliente merece lo mejor, y es por eso que nos esforzamos constantemente por brindar una experiencia de compra que combine calidad y asequibilidad.</p>
+        </div>
+      </div>
+
+      <script>
+        const dropdownTabs = document.querySelectorAll('.dropdown-tab');
+
+        dropdownTabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            const content = tab.nextElementSibling;
+            const toggle = tab.querySelector('.dropdown-toggle');
+
+            if (content.style.display === 'block') {
+              content.style.display = 'none';
+              toggle.textContent = '+';
+              tab.classList.remove('active'); 
+            } else {
+              content.style.display = 'block';
+              toggle.textContent = '-';
+              tab.classList.add('active');
+            }
+          });
+        });
+      </script>
+
+    </div>
+  </div>
+</body>
+</html>
